@@ -2,6 +2,10 @@ package io.cucumber.skeleton;
 
 public class ReservationService {
     public String processRequest(int row, String memberNr) {
+
+        if (row <= 0 || row > 12)
+            return "Ungültige Reihe";
+
         if (!isMemberNrValid(memberNr)) {
             return "Kein Mitglied";
         }
